@@ -7,14 +7,23 @@ export default new Vuex.Store({
     magicInformation: 'This is the default data.'
   },
   mutations: {
-    setMagicInformation (state, value) {
-      state.magicInformation = value
+    setMagicInformation (context, value) {
+      context.magicInformation = value
+    }
+  },
+  getters: {
+    magicInformationLength(context) {
+      // Return a transform of the magicInformation data
+      let len = context.magicInformation.length
+      return len ? len : 'No Data'
     }
   },
   actions: {
     getMagicInformation (context) {
       return new Promise((resolve, reject) => {
+        // Pretend we are calling a slow API
         setTimeout(() => {
+          // Update the state with the proper method
           context.commit('setMagicInformation', 'New Information!')
           resolve()
         }, 3000)
@@ -22,3 +31,4 @@ export default new Vuex.Store({
     }
   }
 })
+
