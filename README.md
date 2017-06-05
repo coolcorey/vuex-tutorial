@@ -1,6 +1,6 @@
 # vuex-tutorial
 
-> A Vue.js project
+> This is a simple, get-started example of using Vuex; The centralized state management library for VueJS.
 
 ## Build Setup
 
